@@ -1,66 +1,69 @@
-## Foundry
+# SciToken Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
+The SciToken project provides an ERC20 token implementation using Solidity and the OpenZeppelin library. The `SciToken` is designed to be a simple, fungible cryptocurrency named "SciToken" with the symbol "SCI". The token features an initial supply mechanism and deployment and testing scripts that facilitate development and testing workflows using Foundry.
 
-Foundry consists of:
+## Features
+- **ERC20 Token**: Implements the ERC20 token standard.
+- **Initial Minting**: Tokens are initially minted to the deployer's address.
+- **Script for Deployment**: Easy deployment of the contract on Ethereum networks.
+- **Comprehensive Testing**: Includes tests for various token functionalities such as transfers and allowances using Foundry's test environment.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Prerequisites
+- [Node.js](https://nodejs.org/) (recommended version 14.x or higher)
+- [Foundry](https://github.com/foundry-rs/foundry)
+  - Install Foundry using the official [installation guide](https://book.getfoundry.sh/getting-started/installation.html).
 
-## Documentation
+## Installation
+To set up the development environment for SciToken, follow these steps:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourrepository/SciToken.git
+   cd SciToken
 
-https://book.getfoundry.sh/
+2. Install Foundry:
+    ```sh
+    curl -L https://foundry.paradigm.xyz | bash
+    foundryup
+
+3. Compile the contracts
+    ```sh
+    forge build
 
 ## Usage
-
-### Build
-
-```shell
-$ forge build
+# Deploying the Contract
+To deploy the SciToken contract to a local testnet, run:
+```sh
+forge script DeploySciToken --fork-url <RPC_URL> --private-key <YOUR_PRIVATE_KEY> --broadcast
 ```
+Replace <RPC_URL> and <YOUR_PRIVATE_KEY> with your Ethereum node RPC URL and private key, respectively.
 
-### Test
+# Running Tests
+Execute the tests to ensure the contract operates correctly:
 
-```shell
-$ forge test
+```sh
+forge test
 ```
+## Contract Functionality
 
-### Format
+    Minting: Tokens are initially minted to the deployer's address with the ability to transfer to other addresses.
+    Transfers: Standard ERC20 transfer capabilities.
+    Approvals and Allowances: Supports ERC20 approve and transferFrom functionalities to enable delegated spending.
 
-```shell
-$ forge fmt
-```
+## Smart Contracts
 
-### Gas Snapshots
+   1. SciToken.sol: Implementation of the SciToken, an ERC20 token.
+   2. DeploySciToken.s.sol: Script for deploying SciToken on Ethereum networks.
+   3. SciTokenTest.sol: Tests for basic functionalities of SciToken.
 
-```shell
-$ forge snapshot
-```
+## Contributing
 
-### Anvil
+Contributions to the SciToken project are welcome. Please ensure that your code adheres to the existing code standards and include tests for new features.
 
-```shell
-$ anvil
-```
 
-### Deploy
+## Licence
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
 
-### Cast
 
-```shell
-$ cast <subcommand>
-```
 
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
