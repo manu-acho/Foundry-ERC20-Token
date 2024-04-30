@@ -1,7 +1,7 @@
-# SciToken Project
+# SciToken 
 
 ## Overview
-The SciToken project provides an ERC20 token implementation using Solidity and the OpenZeppelin library. The `SciToken` is designed to be a simple, fungible cryptocurrency named "SciToken" with the symbol "SCI". The token features an initial supply mechanism and deployment and testing scripts that facilitate development and testing workflows using Foundry.
+This project is an ERC20 token implementation based on the OpenZeppelin library. The `SciToken` is a simple, fungible cryptocurrency that can be deployed for governance purposes within the framework of a DAO.  The token features an initial supply mechanism as well as deployment and testing scripts that facilitate development and testing workflows using Foundry.
 
 ## Features
 - **ERC20 Token**: Implements the ERC20 token standard.
